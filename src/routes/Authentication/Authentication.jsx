@@ -4,7 +4,7 @@ import {
 } from '../../utils/firebase/firebase.utils.js';
 import SignUp from '@components/SignUp/SignUp.jsx';
 
-function SignIn() {
+function Authentication() {
   const logGoogleUser = async () => {
     try {
       const { user } = await signInWithGooglePopUp();
@@ -23,4 +23,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Authentication;

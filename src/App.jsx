@@ -1,8 +1,8 @@
-import Home from "./routes/Home/Home.jsx";
-import { Routes, Route } from "react-router-dom";
-import Navigation from "./routes/Navigation/Navigation.jsx";
-import Shop from "./routes/Shop/Shop.jsx";
-import SignIn from "./routes/SignIn/SignIn.jsx";
+import Home from './routes/Home/Home.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './routes/Navigation/Navigation.jsx';
+import Shop from './routes/Shop/Shop.jsx';
+import Authentication from './routes/Authentication/Authentication.jsx';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path={"shop"} element={<Shop />} />
-          <Route path={"sign-in"} element={<SignIn />} />
+          <Route path={'shop'} element={<Shop />} />
+          <Route path={'auth'} element={<Authentication />} />
         </Route>
       </Routes>
     </>

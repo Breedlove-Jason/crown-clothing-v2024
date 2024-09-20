@@ -1,23 +1,20 @@
-import {
-  signInWithGooglePopUp,
-  createUserDocumentFromAuth,
-} from '../../utils/firebase/firebase.utils.js';
-import SignUp from '@components/SignUp/SignUp.jsx';
+import SignUp from "@components/SignUp/SignUp.jsx";
+import SignIn from "@components/SignIn/SignIn.jsx";
+import "./Authentication.styles.scss";
 
 function Authentication() {
-  const logGoogleUser = async () => {
-    try {
-      const { user } = await signInWithGooglePopUp();
-      const userDocRef = await createUserDocumentFromAuth(user);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const logGoogleUser = async () => {
+  //   try {
+  //     const { user } = await signInWithGooglePopUp();
+  //     const userDocRef = await createUserDocumentFromAuth(user);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
-    <div>
-      <h1>Sign In Page</h1>
-      <button onClick={logGoogleUser}>Sign In with Google PopUp</button>
+    <div className={"authentication-container"}>
+      <SignIn />
       <SignUp />
     </div>
   );

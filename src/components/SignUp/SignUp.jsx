@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   createAuthUserFromEmailAndPassword,
   createUserDocumentFromAuth,
-} from '../../utils/firebase/firebase.utils.js';
-import FormInput from '@components/FormInput/FormInput.jsx';
-import './SignUp.styles.scss';
-import Button from '@components/Button/Button.jsx';
+} from "../../utils/firebase/firebase.utils.js";
+import FormInput from "@components/FormInput/FormInput.jsx";
+import "./SignUp.styles.scss";
+import Button from "@components/Button/Button.jsx";
 
 const defaultFormFields = {
-  displayName: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
+  displayName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
 };
 function SignUp() {
   const [formFields, setFormFields] = useState(defaultFormFields);
@@ -32,8 +32,8 @@ function SignUp() {
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
-      if (error.code === 'auth/email-already-in-use') {
-        alert('Email already in use');
+      if (error.code === "auth/email-already-in-use") {
+        alert("Email already in use");
       } else {
         console.error(error);
       }
@@ -45,43 +45,47 @@ function SignUp() {
   };
 
   return (
-    <div className={'sign-up-container'}>
-      <h2>Don't have an account?</h2>
+    <div className={"sign-up-container"}>
+      <h2>Don&nbsp;t have an account?</h2>
       <span> Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label={'Display Name'}
+          label={"Display Name"}
           required
           type="text"
           onChange={handleChange}
-          name={'displayName'}
+          name={"displayName"}
           value={displayName}
+          autoComplete={"displayName"}
         />
         <FormInput
-          label={'Email'}
+          label={"Email"}
           required
           type="email"
           onChange={handleChange}
-          name={'email'}
+          name={"email"}
           value={email}
+          autoComplete={"email"}
         />
         <FormInput
-          label={'Password'}
+          label={"Password"}
           required
           type="password"
           onChange={handleChange}
-          name={'password'}
+          name={"password"}
           value={password}
+          autoComplete={"new-password"}
         />
         <FormInput
-          label={'Confirm Password'}
+          label={"Confirm Password"}
           required
           type="password"
           onChange={handleChange}
-          name={'confirmPassword'}
+          name={"confirmPassword"}
           value={confirmPassword}
+          autoComplete={"new-password"}
         />
-        <Button type={'submit'}>Sign Up</Button>
+        <Button type={"submit"}>Sign Up</Button>
       </form>
     </div>
   );

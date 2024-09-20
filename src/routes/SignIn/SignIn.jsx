@@ -16,7 +16,7 @@ function SignIn() {
 
   return (
     <div>
-      <h1>SignIn</h1>
+      <h1>Sign In Page</h1>
       <button onClick={logGoogleUser}>Sign In with Google PopUp</button>
       <SignUp />
     </div>

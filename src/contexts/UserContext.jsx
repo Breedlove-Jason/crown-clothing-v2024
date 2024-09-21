@@ -1,9 +1,9 @@
-import { createContext, useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import { createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
-} from "../utils/firebase/firebase.utils.js";
+} from '../utils/firebase/firebase.utils.js';
 
 // actual value
 export const UserContext = createContext({

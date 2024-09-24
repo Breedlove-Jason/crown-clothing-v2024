@@ -1,22 +1,13 @@
-import SignUp from "@components/SignUp/SignUp.jsx";
-import SignIn from "@components/SignIn/SignIn.jsx";
-import "./Authentication.styles.scss";
+import SignUp from '@components/SignUp/SignUp.jsx';
+import SignIn from '@components/SignIn/SignIn.jsx';
+import { AuthenticationContainer } from './Authentication.styles.jsx';
 
 function Authentication() {
-  // const logGoogleUser = async () => {
-  //   try {
-  //     const { user } = await signInWithGooglePopUp();
-  //     const userDocRef = await createUserDocumentFromAuth(user);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   return (
-    <div className={"authentication-container"}>
+    <AuthenticationContainer>
       <SignIn />
       <SignUp />
-    </div>
+    </AuthenticationContainer>
   );
 }
 

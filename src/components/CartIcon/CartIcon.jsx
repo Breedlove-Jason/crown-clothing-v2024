@@ -1,7 +1,14 @@
-import { useContext } from "react";
-import { CartContext } from "../../contexts/CartContext.jsx";
-import ShoppingIcon from "../../assets/shopping-bag.svg";
-import "./CartIcon.styles.scss";
+import { useContext } from 'react';
+
+import { CartContext } from '../../contexts/CartContext.jsx';
+
+import {
+  CartIconContainer,
+  ShoppingIcon,
+  ItemCount,
+} from './CartIcon.styles.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 function CartIcon() {
   const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
@@ -9,11 +16,14 @@ function CartIcon() {
   const toggleIsCartOpen = () => {
     setIsCartOpen(!isCartOpen);
   };
+
   return (
-    <div className={"cart-icon-container"} onClick={toggleIsCartOpen}>
-      <img src={ShoppingIcon} className={"shopping-icon"} alt="Shopping Bag" />
-      <span className={"item-count"}>{cartCount}</span>
-    </div>
+    <CartIconContainer onClick={toggleIsCartOpen}>
+      <ShoppingIcon>
+        <FontAwesomeIcon icon={faShoppingCart} />
+        <ItemCount>{cartCount}</ItemCount>
+      </ShoppingIcon>
+    </CartIconContainer>
   );
 }
 

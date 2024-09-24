@@ -1,12 +1,12 @@
 import './Directory.styles.scss';
 import PropTypes from 'prop-types';
-import CategoryItem from '@components/CategoryItem/CategoryItem';
+import DirectoryItem from '@components/DirectoryItem/DirectoryItem.jsx';
 
 function Directory({ categories }) {
   return (
     <div className={'directory-container'}>
       {categories.map((category) => (
-        <CategoryItem
+        <DirectoryItem
           key={category.id}
           title={category.title}
           imageUrl={category.imageUrl}

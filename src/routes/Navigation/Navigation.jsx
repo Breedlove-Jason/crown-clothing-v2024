@@ -14,12 +14,7 @@ import './Navigation.styles.scss';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
-
-  const toggleCartDropdown = () => {
-    setIsCartOpen(!isCartOpen);
-    console.log('isOpen', isCartOpen);
-  };
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <Fragment>

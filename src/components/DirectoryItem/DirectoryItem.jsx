@@ -1,14 +1,14 @@
-import './CategoryItem.styles.scss';
+import './DirectoryItem.styles.scss';
 import PropTypes from 'prop-types';
 
-function CategoryItem({ imageUrl, title }) {
+function DirectoryItem({ imageUrl, title }) {
   return (
-    <div className={'category-container'}>
+    <div className={'directory-item-container'}>
       <div
         className={'background-image'}
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></div>
-      <div className={'category-body-container'}>
+      <div className={'body'}>
         <h2>{title}</h2>
         <p>Shop Now</p>
       </div>
@@ -16,9 +16,9 @@ function CategoryItem({ imageUrl, title }) {
   );
 }
 
-export default CategoryItem;
+export default DirectoryItem;
 
-CategoryItem.propTypes = {
+DirectoryItem.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };

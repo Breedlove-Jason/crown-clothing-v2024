@@ -1,21 +1,25 @@
-import "./Button.styles.scss";
+import PropTypes from 'prop-types';
+import {
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+} from './Button.styles.jsx';
 
 const BUTTON_TYPE_CLASSES = {
-  google: "google-sign-in",
-  inverted: "inverted",
+  google: GoogleSignInButton,
+  inverted: InvertedButton,
+  base: BaseButton, // Default button style
 };
 
 function Button({ children, buttonType, ...otherProps }) {
-  return (
-    <>
-      <button
-        className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
-        {...otherProps} // Spread otherProps including onClick handler
-      >
-        {children}
-      </button>
-    </>
-  );
+  const CustomButton = BUTTON_TYPE_CLASSES[buttonType] || BaseButton;
+
+  return <CustomButton {...otherProps}>{children}</CustomButton>;
 }
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  buttonType: PropTypes.string,
+};
 
 export default Button;

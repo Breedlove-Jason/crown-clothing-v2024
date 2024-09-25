@@ -1,43 +1,55 @@
-import './CheckoutItem.styles.scss';
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
+// Cart context for managing the cart state
 import { CartContext } from '../../contexts/CartContext';
+// Styled components for the CheckoutItem
+import { CheckoutItemContainer } from './CheckoutItem.styles.jsx';
 
 function CheckoutItem({ cartItem }) {
   const { name, quantity, price, imageUrl } = cartItem;
   const { clearItemFromCart, addItemToCart, removeItemFromCart } =
     useContext(CartContext);
 
+  // Handle removing the item completely from the cart
   const handleClearItem = () => {
     clearItemFromCart(cartItem);
   };
+
+  // Handle adding one more of the item to the cart
   const handleAddItem = () => {
     addItemToCart(cartItem);
   };
+
+  // Handle removing one item from the cart
   const handleRemoveItem = () => {
     removeItemFromCart(cartItem);
   };
 
   return (
-    <div className={'checkout-item-container'}>
-      <div className={'image-container'}>
-        <img src={imageUrl} alt={`${name}`} />
+    <CheckoutItemContainer>
+      {/* Display the image */}
+      <div className="image-container">
+        <img src={imageUrl} alt={name} />
       </div>
-      <span className={'name'}>{name}</span>
-      <span className={'quantity'}>
-        <div className={'arrow'} onClick={handleRemoveItem}>
+      {/* Display the item name */}
+      <span className="name">{name}</span>
+      {/* Quantity controls */}
+      <span className="quantity">
+        <div className="arrow" onClick={handleRemoveItem}>
           &#10094;
         </div>
-        <span className={'value'}>{quantity}</span>
-        <div className={'arrow'} onClick={handleAddItem}>
+        <span className="value">{quantity}</span>
+        <div className="arrow" onClick={handleAddItem}>
           &#10095;
         </div>
       </span>
-      <span className={'price'}>{price}</span>
-      <div onClick={handleClearItem} className={'remove-button'}>
+      {/* Display the item price */}
+      <span className="price">${price}</span>
+      {/* Remove button */}
+      <div onClick={handleClearItem} className="remove-button">
         &#10005;
       </div>
-    </div>
+    </CheckoutItemContainer>
   );
 }
 
@@ -49,4 +61,5 @@ CheckoutItem.propTypes = {
     imageUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
+
 export default CheckoutItem;

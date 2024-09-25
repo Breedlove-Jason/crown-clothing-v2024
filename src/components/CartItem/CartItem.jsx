@@ -1,18 +1,22 @@
-import "./CartItem.styles.scss";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+// Styled components for the CartItem
+import { CartItemContainer } from './CartItem.styles.jsx';
 
 function CartItem({ cartItem }) {
   const { name, quantity, price, imageUrl } = cartItem;
+
   return (
-    <div className={"cart-item-container"}>
-      <img src={imageUrl} alt={`${name}`} />
-      <div className={"item-details"}>
-        <span className={"name"}>{name}</span>
-        <span className={"price"}>
+    <CartItemContainer>
+      {/* Display the product image */}
+      <img src={imageUrl} alt={name} />
+      {/* Display the item details */}
+      <div className="item-details">
+        <span className="name">{name}</span>
+        <span className="price">
           {quantity} x ${price}
         </span>
       </div>
-    </div>
+    </CartItemContainer>
   );
 }
 

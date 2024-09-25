@@ -1,22 +1,23 @@
-import './Directory.styles.scss';
 import PropTypes from 'prop-types';
 import DirectoryItem from '@components/DirectoryItem/DirectoryItem.jsx';
+// Styled components for the Directory
+import { DirectoryContainer } from './Directory.styles.jsx';
 
 function Directory({ categories }) {
   return (
-    <div className={'directory-container'}>
+    <DirectoryContainer>
+      {/* Map over the categories and render DirectoryItem components */}
       {categories.map((category) => (
         <DirectoryItem
           key={category.id}
           title={category.title}
           imageUrl={category.imageUrl}
+          route={`/shop/${category.title.toLowerCase()}`} // Example: shop/hats
         />
       ))}
-    </div>
+    </DirectoryContainer>
   );
 }
-
-export default Directory;
 
 Directory.propTypes = {
   categories: PropTypes.arrayOf(
@@ -27,3 +28,5 @@ Directory.propTypes = {
     }),
   ).isRequired,
 };
+
+export default Directory;

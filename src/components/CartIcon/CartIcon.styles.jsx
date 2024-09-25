@@ -1,40 +1,42 @@
 import styled from 'styled-components';
-import { ReactComponent as ShoppingSvg } from '../../assets/shopping-bag.svg';
 
 export const CartIconContainer = styled.div`
-  width: 60px; /* Increased size */
-  height: 60px; /* Increased size */
+  width: 60px;
+  height: 60px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  //background-color: #343a40; /* Dark background color for Cyborg theme */
 
   @media (max-width: 768px) {
-    width: 45px; /* Adjusted size for mobile */
-    height: 45px; /* Adjusted size for mobile */
+    width: 45px;
+    height: 45px;
   }
 `;
 
-export const ShoppingIcon = styled(ShoppingSvg)`
-  width: 40px; /* Increased size */
-  height: 40px; /* Increased size */
-  margin-top: 13px; /* Centered vertically */
+export const ShoppingIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  margin-top: 13px;
+  color: #f8f9fa; /* Light text color for Cyborg theme */
+
   @media (max-width: 768px) {
-    width: 30px; /* Adjusted size for mobile */
-    height: 30px; /* Adjusted size for mobile */
+    width: 30px;
+    height: 30px;
   }
 `;
 
 export const ItemCount = styled.span`
   position: absolute;
-  font-size: 14px; /* Increased font size */
+  font-size: 14px;
   font-weight: bold;
-  top: 8px; /* Centered on top */
-  color: black; /* Black text */
+  top: 5px;
+  color: #f8f9fa; /* Light text color for Cyborg theme */
 
   @media (max-width: 768px) {
-    font-size: 12px; /* Adjusted font size for mobile */
-    top: 3px; /* Adjusted position for mobile */
+    font-size: 12px;
+    top: 3px;
   }
 `;

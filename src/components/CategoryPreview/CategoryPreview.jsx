@@ -1,16 +1,19 @@
-import './CategoryPreview.styles.scss';
 import ProductCard from '@components/ProductCard/ProductCard.jsx';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+// Styled components for CategoryPreview
+import { CategoryPreviewContainer } from './CategoryPreview.styles.jsx';
 
 function CategoryPreview({ title, products }) {
   return (
-    <div className={'category-preview-container'}>
+    <CategoryPreviewContainer>
+      {/* Link to full category page */}
       <h2>
-        <Link className={'title'} to={title}>
+        <Link className="title" to={title}>
           {title.toUpperCase()}
         </Link>
       </h2>
+      {/* Display up to 4 products */}
       <div className="preview">
         {products
           .filter((_, idx) => idx < 4)
@@ -18,9 +21,10 @@ function CategoryPreview({ title, products }) {
             <ProductCard product={product} key={product.id} />
           ))}
       </div>
-    </div>
+    </CategoryPreviewContainer>
   );
 }
+
 CategoryPreview.propTypes = {
   title: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(
@@ -32,4 +36,5 @@ CategoryPreview.propTypes = {
     }),
   ).isRequired,
 };
+
 export default CategoryPreview;

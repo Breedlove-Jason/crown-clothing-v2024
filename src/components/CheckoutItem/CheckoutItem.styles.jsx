@@ -13,10 +13,10 @@ export const CheckoutItemContainer = styled.div`
     width: 23%;
     padding-right: 15px;
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    //img {
+    //  width: 100%;
+    //  height: 100%;
+    //}
   }
 
   .name,
@@ -51,4 +51,11 @@ export const CheckoutItemContainer = styled.div`
       width: 20%;
     }
   }
+`;
+
+export const CheckoutItemImage = styled.img`
+     width: 150px !important; /* Ensure all images are the same width */
+     height: 200px; !important/* Ensure all images are the same height */
+     object-fit: cover; /* Keep aspect ratio and crop overflow */
+     border-radius: 15px; /* Add border-radius to match the container */
 `;

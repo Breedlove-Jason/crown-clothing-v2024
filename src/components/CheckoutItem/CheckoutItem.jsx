@@ -3,7 +3,10 @@ import { useContext } from 'react';
 // Cart context for managing the cart state
 import { CartContext } from '../../contexts/CartContext';
 // Styled components for the CheckoutItem
-import { CheckoutItemContainer } from './CheckoutItem.styles.jsx';
+import {
+  CheckoutItemContainer,
+  CheckoutItemImage,
+} from './CheckoutItem.styles.jsx';
 
 function CheckoutItem({ cartItem }) {
   const { name, quantity, price, imageUrl } = cartItem;
@@ -29,7 +32,7 @@ function CheckoutItem({ cartItem }) {
     <CheckoutItemContainer>
       {/* Display the image */}
       <div className="image-container">
-        <img src={imageUrl} alt={name} />
+        <CheckoutItemImage src={imageUrl} alt={name} />
       </div>
       {/* Display the item name */}
       <span className="name">{name}</span>

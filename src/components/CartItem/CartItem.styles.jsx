@@ -8,6 +8,7 @@ export const CartItemContainer = styled.div`
 
   img {
     width: 30%;
+    border-radius: 15px;
   }
 
   .item-details {

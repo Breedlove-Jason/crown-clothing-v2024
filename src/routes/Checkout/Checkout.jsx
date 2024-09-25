@@ -11,9 +11,11 @@ import {
 
 function Checkout() {
   const { cartItems, cartTotal } = useContext(CartContext);
+
   return (
     <CheckoutContainer>
       <CheckoutHeader>
+        {/* Column headers */}
         <HeaderBlock>
           <span>Product</span>
         </HeaderBlock>
@@ -30,9 +32,11 @@ function Checkout() {
           <span>Remove</span>
         </HeaderBlock>
       </CheckoutHeader>
-      {cartItems.map((item) => {
-        return <CheckoutItem cartItem={item} key={item.id} />;
-      })}
+      {/* Render cart items */}
+      {cartItems.map((item) => (
+        <CheckoutItem cartItem={item} key={item.id} />
+      ))}
+      {/* Display total */}
       <Total>Total: ${cartTotal}</Total>
     </CheckoutContainer>
   );

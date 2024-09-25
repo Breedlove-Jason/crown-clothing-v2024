@@ -24,9 +24,11 @@ const Navigation = () => {
   return (
     <Fragment>
       <NavigationContainer>
-        <LogoContainer to={'/'}>
-          <img src={CrownLogo} alt={'Crown Clothing Logo'} />
+        {/* Logo linked to home */}
+        <LogoContainer to="/">
+          <img src={CrownLogo} alt="Crown Clothing Logo" />
         </LogoContainer>
+        {/* Navigation links */}
         <NavLinksContainer>
           <NavLink to="/shop">SHOP</NavLink>
           {currentUser ? (
@@ -38,6 +40,7 @@ const Navigation = () => {
           )}
           <CartIcon />
         </NavLinksContainer>
+        {/* Conditionally render CartDropdown if the cart is open */}
         {isCartOpen && <CartDropdown />}
       </NavigationContainer>
       <Outlet />

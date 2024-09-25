@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
-import './FormInput.styles.scss';
+// Styled components for the FormInput
+import { Group, FormInputField, FormInputLabel } from './FormInput.styles.jsx';
 
 function FormInput({ label, ...otherProps }) {
   return (
-    <div className={'group'}>
-      <input className={'form-input'} {...otherProps} />
+    <Group>
+      {/* Input field */}
+      <FormInputField {...otherProps} />
+      {/* Label that shrinks when the input has a value */}
       {label && (
-        <label
-          className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}
-        >
+        <FormInputLabel className={otherProps.value.length ? 'shrink' : ''}>
           {label}
-        </label>
+        </FormInputLabel>
       )}
-    </div>
+    </Group>
   );
 }
 

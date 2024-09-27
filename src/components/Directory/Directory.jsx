@@ -10,7 +10,7 @@ function Directory({ categories }) {
       {categories.map((category) => (
         <DirectoryItem
           key={category.id}
-          title={category.title}
+          title={category.title.toUpperCase()}
           imageUrl={category.imageUrl}
           route={`/shop/${category.title.toLowerCase()}`} // Example: shop/hats
         />

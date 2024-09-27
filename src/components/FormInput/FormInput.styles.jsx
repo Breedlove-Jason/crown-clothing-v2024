@@ -15,8 +15,7 @@ export const Group = styled.div`
 `;
 
 export const FormInputField = styled.input`
-  background: none;
-  background-color: white;
+  background: white none;
   color: ${subColor};
   font-size: 18px;
   padding: 10px 10px 10px 5px;

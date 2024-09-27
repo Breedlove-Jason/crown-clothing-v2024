@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BaseButton = styled.button`
+export const BaseButton = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -25,7 +25,7 @@ const BaseButton = styled.button`
   }
 `;
 
-const GoogleSignInButton = styled(BaseButton)`
+export const GoogleSignInButton = styled(BaseButton)`
   background-color: #4285f4;
   color: white;
 
@@ -35,7 +35,7 @@ const GoogleSignInButton = styled(BaseButton)`
   }
 `;
 
-const InvertedButton = styled(BaseButton)`
+export const InvertedButton = styled(BaseButton)`
   background-color: white;
   color: #343a40;
   border: 1px solid #343a40;
@@ -47,4 +47,4 @@ const InvertedButton = styled(BaseButton)`
   }
 `;
 
-export { BaseButton, GoogleSignInButton, InvertedButton };
+// export { BaseButton, GoogleSignInButton, InvertedButton };

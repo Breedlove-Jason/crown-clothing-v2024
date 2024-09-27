@@ -7,17 +7,13 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 function DirectoryItem({ imageUrl, title, route }) {
-  // Get the navigate function from the useNavigate hook
   const navigate = useNavigate();
-  // Navigate to the specific route on click
   const onNavigateHandler = () => navigate(route);
+
   return (
-    <DirectoryItemContainer>
-      <BackgroundImage
-        className="background-image"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      />
-      <BodyContainer className="body" onClick={onNavigateHandler}>
+    <DirectoryItemContainer onClick={onNavigateHandler}>
+      <BackgroundImage $imageUrl={imageUrl} />
+      <BodyContainer className="body">
         <h2>{title}</h2>
         <p>Shop Now</p>
       </BodyContainer>
